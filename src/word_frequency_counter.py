@@ -4,3 +4,10 @@ class WordFrequencyCounter:
 
 	def count(self, word):
 		return self.words.count(word)
+
+	def summary(self):
+		summary = {}
+		for word in self.words:
+			summary[word] = self.count(word)
+		return summary
+
