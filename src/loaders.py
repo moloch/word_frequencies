@@ -1,7 +1,10 @@
+import re
+
 class StringLoader:
 
 	def load(self, words_string):
-		return words_string.lower().replace('.','').split()
+		words_string = re.sub('[!.,?]', '', words_string)
+		return words_string.lower().split()
 
 class FileLoader:
 
@@ -9,5 +12,6 @@ class FileLoader:
 		with open(filename, 'r') as file:
 			words_string = ''
 			for line in file:
-				words_string += " " + line.strip().replace('.', '')
+				line = re.sub('[!.,?]', '', line)
+				words_string += " " + line
 			return words_string.lower().split()
