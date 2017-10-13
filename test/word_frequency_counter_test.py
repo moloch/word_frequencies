@@ -7,3 +7,8 @@ class TestWordFrequencyCounter(TestCase):
 		frequencyCounter = WordFrequencyCounter()
 		frequencyCounter.load_from_string('a b c d')
 		self.assertEqual(0, frequencyCounter.count(''))
+
+	def finds_one_occurrence_test(self):
+		frequencyCounter = WordFrequencyCounter()
+		frequencyCounter.load_from_string('a b c d')
+		self.assertEqual(1, frequencyCounter.count('a'))
