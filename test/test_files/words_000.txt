@@ -1,0 +1,2 @@
+It should work well.
+It should also be tested.
