@@ -26,3 +26,10 @@ class TestWordFrequencyCounter(TestCase):
 		self.assertEqual(1, summary['also'])
 		self.assertEqual(1, summary['be'])
 		self.assertEqual(1, summary['tested'])
+
+	def textual_summary_test(self):
+		dir_path = os.path.dirname(os.path.realpath(__file__))
+		self.frequencyCounter.load_from_file(dir_path + '/test_files/words_000.txt')
+		textual_summary = self.frequencyCounter.textual_summary()
+		self.assertEqual('', textual_summary)
+
