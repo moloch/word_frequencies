@@ -32,4 +32,3 @@ class TestWordFrequencyCounter(TestCase):
 		self.frequencyCounter.load_from_file(dir_path + '/test_files/words_000.txt')
 		textual_summary = self.frequencyCounter.textual_summary()
 		self.assertEqual('- it: 2\n- should: 2\n- also: 1\n- be: 1\n- tested: 1\n- well: 1\n- work: 1\n', textual_summary)
-
