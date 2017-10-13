@@ -2,18 +2,8 @@ from collections import Counter, OrderedDict
 import operator
 
 class WordFrequencyCounter:
-	def __init__(self):
-		self.words = []
-
-	def load_from_string(self, words_string):
-		self.words = words_string.lower().split()
-
-	def load_from_file(self, filename):
-		with open(filename, 'r') as file:
-			data = ''
-			for line in file:
-				data += " " + line.strip().replace('.', '')
-			self.load_from_string(data)
+	def __init__(self, words):
+		self.words = words
 
 	def summary(self):
 		return dict(Counter(self.words))
