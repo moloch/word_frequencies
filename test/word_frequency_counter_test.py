@@ -19,3 +19,7 @@ class TestWordFrequencyCounter(TestCase):
 	def finds_zero_occurrences_if_word_not_found_test(self):
 		self.frequencyCounter.load_from_string('a b c d')
 		self.assertEqual(0, self.frequencyCounter.count('e'))
+
+	def finds_two_occurrences_test(self):
+		self.frequencyCounter.load_from_string('a a b c d')
+		self.assertEqual(2, self.frequencyCounter.count('a'))
