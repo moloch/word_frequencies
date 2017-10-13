@@ -8,7 +8,11 @@ class WordFrequencyCounter:
 		self.words = words.split(' ')
 
 	def load_from_file(self, filename):
-		pass
+		with open(filename, 'r') as file:
+			data = ''
+			for line in file:
+				data += " " + line.strip().replace('.', '')
+			self.load_from_string(data)
 
 	def summary(self):
 		return dict(Counter(self.words))
