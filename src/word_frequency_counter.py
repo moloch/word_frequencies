@@ -3,4 +3,7 @@ class WordFrequencyCounter:
 		self.words = words
 
 	def count(self, word):
-		return 0 
+		if word in self.words.split():
+			return 1
+		else:
+			return 0
