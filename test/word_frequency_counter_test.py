@@ -1,4 +1,5 @@
 from unittest import TestCase
+from src.word_frequency_counter import WordFrequencyCounter
 
 class TestWordFrequencyCounter(TestCase):
 
