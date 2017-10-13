@@ -1,3 +1,5 @@
+from collections import Counter
+
 class WordFrequencyCounter:
 	def load_from_string(self, words):
 		self.words = words.split(' ')
@@ -6,8 +8,5 @@ class WordFrequencyCounter:
 		return self.words.count(word)
 
 	def summary(self):
-		summary = {}
-		for word in self.words:
-			summary[word] = self.count(word)
-		return summary
+		return dict(Counter(self.words))
 
