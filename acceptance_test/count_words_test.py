@@ -8,3 +8,11 @@ class TestCountWords(TestCase):
 		output = subprocess.run(["python", "count_words.py", filename], stdout=subprocess.PIPE).stdout
 		expected_output = 'Word frequencies for '+ filename +':\n- it: 2\n- should: 2\n- also: 1\n- be: 1\n- tested: 1\n- well: 1\n- work: 1\n\n'
 		self.assertEqual(expected_output, output.decode('UTF8'))
+
+	def count_words_with_banned_words_test(self):
+		dir_path = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+		filename = dir_path + '/test/test_files/words_000.txt'
+		ban_filename = dir_path + '/test/test_files/filter_000.txt'
+		output = subprocess.run(["python", "count_words.py", filename, ban_filename], stdout=subprocess.PIPE).stdout
+		expected_output = 'Word frequencies for '+ filename +':\n- should: 2\n- also: 1\n- tested: 1\n- well: 1\n- work: 1\n\n'
+		self.assertEqual(expected_output, output.decode('UTF8'))
