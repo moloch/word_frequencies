@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 from src.word_frequency_counter import WordFrequencyCounter
 from src.loaders import FileLoader
